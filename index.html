@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gods</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <style>
+        .card:hover {
+            background-color: #abeaff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <section class="section">
+            <div class="container">
+                <h1 class="title">Gods</h1>
+                <hr>
+                <div class="columns is-multiline">
+                    <div v-for="site in sites" class="column is-6">
+                        <a v-bind:href="site.url">
+                            <div class="card">
+                                <div class="card-content">
+                                    <p class="title">{{site.name}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    sites: [{
+                            name: 'Fantasy Football Optimizer',
+                            url: 'https://godsvictory.github.io/FFOptimizer'
+                        },
+                        {
+                            name: 'BlabrBox',
+                            url: 'https://godsvictory.github.io/BlabrBox'
+                        },
+                        {
+                            name: 'Spymaster',
+                            url: 'https://godsvictory.github.io/Spymaster'
+                        },
+                        {
+                            name: 'Calorie Calculator',
+                            url: 'https://godsvictory.github.io/KCalc'
+                        },
+                        {
+                            name: 'Investiment Estimator',
+                            url: 'https://godsvictory.github.io/Investimate'
+                        },
+                        {
+                            name: 'Loan Estimator',
+                            url: 'https://godsvictory.github.io/Loanimate'
+                        },
+                        {
+                            name: 'Tally',
+                            url: 'https://godsvictory.github.io/Tally'
+                        },
+                        {
+                            name: 'Bible Verse',
+                            url: 'https://godsvictory.github.io/BibleVerse'
+                        },
+                        {
+                            name: 'RainTyper',
+                            url: 'https://godsvictory.github.io/RainTyper'
+                        },
+                        {
+                            name: 'Staying Alive',
+                            url: 'https://godsvictory.github.io/StayingAlive'
+                        },
+                        {
+                            name: 'WASD Trainer',
+                            url: 'https://godsvictory.github.io/WASD-Trainer'
+                        },
+                        {
+                            name: 'Marquee',
+                            url: 'https://godsvictory.github.io/Marquee'
+                        },
+                        {
+                            name: 'Star Wars Names',
+                            url: 'https://godsvictory.github.io/SWNames'
+                        },
+                        {
+                            name: 'SuperOnRoad',
+                            url: 'https://superonroad.herokuapp.com'
+                        },
+                        {
+                            name: 'iDontSquare',
+                            url: 'https://idontsquare.herokuapp.com'
+                        }
+                    ]
+                }
+            },
+            methods: {
+                goto: function (url) {
+                    window.location = url;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
